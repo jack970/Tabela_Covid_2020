@@ -1,0 +1,40 @@
+.Card {
+    max-width: 100%;
+    width: 50%;
+    margin: 4rem auto;
+    border: 2px solid #333333;
+    border-radius: 2%;
+}
+
+.card-content {
+    height: 30rem;
+    overflow: scroll;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+table {
+    width:100%;
+    table-layout: fixed;
+}
+.text-rigth {
+    text-align: left;
+}
+
+td{
+    padding: 6px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 12px;
+    border-bottom: solid 1px #333333;
+}
+td > img {
+    margin-right: 8px;
+}
+.table-scroll {
+    max-height: 600px;
+    overflow: auto;
+}
