@@ -26,6 +26,12 @@ const BrazilCard = ({title, children}) => {
                                 <strong>Mortes</strong>
                             </span>
                         </td>
+                        <td>
+                            <span>
+                                {` `}
+                                <strong>Data de Atualização</strong>
+                            </span>
+                        </td>
                     </tr>
                 </thead>
             </table>

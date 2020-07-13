@@ -12,6 +12,12 @@ function App() {
     })
   }, [])
 
+  const date = (date) => {
+    date = new Date(date)
+    return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+
+  }
+
   function getFlag(uf) {
     return `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${uf}.png`;
   }
@@ -29,6 +35,7 @@ function App() {
                   {project.uf} </td>
                 <td>{project.cases} </td>
                 <td> {project.deaths} </td>
+                <td> {date(project.datetime)} </td>
               </tr>
             )
           })}
