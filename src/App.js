@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Header from './components/Header';
 import api from './services/api'
 import BrazilCard from './components/BrazilCard'
+import StatCell from './components/StatCell';
+import commaNumber from 'comma-number'
 
 function App() {
   const [projects, setProjects] = useState([])
@@ -33,14 +35,15 @@ function App() {
                 <td>
                   <img src={getFlag(project.uf)} alt="uf flag" width="20px" />
                   {project.uf} </td>
-                <td>{project.cases} </td>
-                <td> {project.deaths} </td>
+                <td>{commaNumber(project.cases)}</td>
+                <td>{ commaNumber(project.deaths)}</td>
                 <td> {date(project.datetime)} </td>
               </tr>
             )
           })}
         </tbody>
       </BrazilCard>
+      <StatCell data={projects} />
     </div>
   );
 }
