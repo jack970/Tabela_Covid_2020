@@ -4,13 +4,18 @@ import api from './services/api'
 import BrazilCard from './components/BrazilCard'
 import StatCell from './components/StatCell';
 import commaNumber from 'comma-number'
+import { Loading } from './components/StatCell'
 
 function App() {
+
+  const [loading, setLoading] = useState(false)
+
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
     api.get('api/report/v1').then(response => {
       setProjects(response.data.data)
+      setLoading(!loading)
     })
   }, [])
 
@@ -29,7 +34,7 @@ function App() {
       <Header title="COVID 2020" />
       <BrazilCard title="Tabela de infecção">
         <tbody>
-          {projects.map(project => {
+          {loading ? projects.map(project => {
             return(
               <tr key={project.uid}>
                 <td>
@@ -40,10 +45,10 @@ function App() {
                 <td> {date(project.datetime)} </td>
               </tr>
             )
-          })}
+          }) : <Loading /> }
         </tbody>
       </BrazilCard>
-      <StatCell data={projects} />
+      {loading ? <StatCell data={projects} />: <Loading /> }
     </div>
   );
 }
