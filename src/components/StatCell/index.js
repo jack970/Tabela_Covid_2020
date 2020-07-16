@@ -10,11 +10,9 @@ const style= {
 }
 
 export const Loading = () => (
-    <div>
-        <section style={style}>
-            <Spinner size={72}/> Loading...
-        </section>
-    </div>
+    <section style={style}>
+        <Spinner size={72}/> Loading...
+    </section>
 )
 
 const StatCell = ({data}) => {

@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     api.get('api/report/v1').then(response => {
       setProjects(response.data.data)
-      setLoading(!loading)
+      setLoading(true)
     })
   }, [])
 
@@ -32,9 +32,9 @@ function App() {
   return (
     <div className="App">
       <Header title="COVID 2020" />
-      <BrazilCard title="Tabela de infecção">
+      {loading ? <BrazilCard title="Tabela de infecção">
         <tbody>
-          {loading ? projects.map(project => {
+          {projects.map(project => {
             return(
               <tr key={project.uid}>
                 <td>
@@ -45,10 +45,10 @@ function App() {
                 <td> {date(project.datetime)} </td>
               </tr>
             )
-          }) : <Loading /> }
+          })}
         </tbody>
-      </BrazilCard>
-      {loading ? <StatCell data={projects} />: <Loading /> }
+      </BrazilCard> : <Loading />}
+      {loading ? <StatCell data={projects} />: `` }
     </div>
   );
 }
