@@ -4,9 +4,13 @@ import StatChart from '../StatChart'
 const StatCell = ({data}) => {
     return(
         <div>
-            <section>
-                <h1>casos</h1>
-                <StatChart data={data} color='dark' dataKey='cases'></StatChart>
+            <section style={{ 
+                margin: 'auto',
+                padding: '0',
+                width: 'min-content',
+                textAlign: 'center'}}>
+                <h1>Gráfico do COVID-19 nos Estados do Brasil</h1>
+                <StatChart data={data} />
             </section>
         </div>
     )
