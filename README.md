@@ -20,7 +20,7 @@ Tabela com as informações de confirmados e mortes pelo COVID19, por cada estad
     
 1. **Compilar a aplicação.**
 
-  Para compilar a aplicação basta acessa-la no terminal e digitar:
+    Para compilar a aplicação basta acessa-la no terminal e digitar:
     ```shell
     npm start
     ```
